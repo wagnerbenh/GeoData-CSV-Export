@@ -27,13 +27,11 @@ var csv = array.map(function(d){
 	return d.join();
 }).join('\n');
 
-console.log(csv);
-
 /* export to CSV file */
 var pom = document.createElement('a');
 var csvContent=csv; 
 var blob = new Blob([csvContent],{type: 'text/csv;charset=utf-8;'});
 var url = URL.createObjectURL(blob);
 pom.href = url;
-pom.setAttribute('download', 'foo.csv');
+pom.setAttribute('download', 'property_export.csv');
 pom.click();
